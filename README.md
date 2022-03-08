@@ -32,3 +32,16 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ### Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+# Linear Regression Model
+
+This model was generated in Jupyter Notebook. 
+The folder "Crypto Forecasting" contains 4 files:
+"BTC.csv", "ETH.csv" and "LTC.csv" are the dataset of Bitcoin, Ethereum and Litcoin from the past year obtained from Yahoo Finance [https://finance.yahoo.com/cryptocurrencies/]
+
+### Training the data
+
+In order to train the data was split into 85% for Training data and 15% for Testing data.
+The model predicts the price for next 14 days.
+
+
