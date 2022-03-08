@@ -38,10 +38,21 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 This model was generated in Jupyter Notebook. 
 The folder "Crypto Forecasting" contains 4 files:
 "BTC.csv", "ETH.csv" and "LTC.csv" are the dataset of Bitcoin, Ethereum and Litcoin from the past year obtained from Yahoo Finance [https://finance.yahoo.com/cryptocurrencies/]
+Read all the comments in the code for a better understanding 
+
+### Load the data
+The data sets were load into the model and the a new independent data set was created in order to tested.
 
 ### Training the data
 
 In order to train the data was split into 85% for Training data and 15% for Testing data.
 The model predicts the price for next 14 days.
+
+### Score
+The R² error obtained is around 0.62 which means the model might be a little weak.
+
+## Future work
+Develope a different Machine Learning Model such as SVM, Ridge Regression or Deep Learning models. 
+Compare the accuracy of each model
 
 
