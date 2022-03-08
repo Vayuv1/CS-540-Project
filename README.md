@@ -52,7 +52,7 @@ The model predicts the price for next 14 days.
 The R² error obtained is around 0.62 which means the model might be a little weak.
 
 ## Future work
-Develope a different Machine Learning Model such as SVM, Ridge Regression or Deep Learning models. 
+Develope a different Machine Learning Model such as SVM, Ridge Regression or any Deep Learning model. 
 Compare the accuracy of each model
 
 
