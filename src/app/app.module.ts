@@ -9,17 +9,21 @@ import {
   MatInputModule,
   MatButtonModule,
   MatCheckboxModule,
-  MatIconModule
+  MatIconModule, MatSelectModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterUserComponent } from './register-user/register-user.component';
+import { DetailPageComponent } from './detail-page/detail-page.component';
+import { AppRoutingModule } from './app-routing.module';
+import { AgGridModule} from 'ag-grid-angular';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterUserComponent
+    RegisterUserComponent,
+    DetailPageComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +35,10 @@ import { RegisterUserComponent } from './register-user/register-user.component';
     MatFormFieldModule,
     MatButtonModule,
     MatCheckboxModule,
-    MatIconModule
+    MatIconModule,
+    AppRoutingModule,
+    AgGridModule.withComponents([]),
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
