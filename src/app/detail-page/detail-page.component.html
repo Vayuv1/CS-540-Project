@@ -1,32 +1,42 @@
 <div>
   <mat-form-field appearance="fill">
     <mat-label>Select an option</mat-label>
-    <mat-select [(value)]=selected>
-      <mat-option *ngFor="let crypto of cryptos" [value]="crypto" (click)="onSelect()">{{crypto.name}}</mat-option>
+    <mat-select (selectionChange)="selectCrypto($event.value)" [value]="selected">
+      <mat-option *ngFor="let crypto of cryptos" [value]="crypto">{{crypto.name}}</mat-option>
     </mat-select>
   </mat-form-field>
 
   <mat-tab-group>
     <mat-tab label="Summary">
-      <h2>{{selected.name}}</h2>
-      <p><b>Current Price: </b>{{records[selected.code][0].price}}</p>
-      <p><b>Price Change: </b><span [style.color] = "records[selected.code][0].change > 0 ? 'green': 'red'">{{records[selected.code][0].change}}</span></p>
-      <p><b>Percentage Change: </b><span [style.color] = "records[selected.code][0].change > 0 ? 'green': 'red'">{{records[selected.code][0].perChange}}</span></p>
-
+      <h2>{{selected?.name}}</h2>
+      <p><b>Current Price: </b>{{currentRecord?.price}}</p>
+      <p>
+        <b>Price Change: </b>
+        <span [class]="{'up-price': currentRecord?.change>0, 'down-price': currentRecord?.change<0}">
+          {{currentRecord?.change}}
+        </span>
+      </p>
+      <p>
+        <b>Percentage Change: </b>
+        <span [class]="{'up-price': currentRecord?.change>0, 'down-price': currentRecord?.change<0}">
+          {{currentRecord?.perChange}}
+        </span>
+      </p>
     </mat-tab>
     <mat-tab label="Records">
       <ag-grid-angular
-        style="width: 1000px; height: 500px;"
-        class="ag-theme-alpine"
-        [columnDefs]="columnDefs"
-        (gridReady)="onGridReady($event)"
         [rowData]="rowData"
-        >
+        [columnDefs]="columnDefs"
+        class="ag-theme-alpine data-table">
       </ag-grid-angular>
     </mat-tab>
-    <mat-tab label="Prediction"> Content 3 </mat-tab>
+    <mat-tab label="Prediction">
+      <ag-grid-angular
+        [columnDefs]="predictionColumnDefs"
+        [rowData]="predictionRowData"
+        class="ag-theme-alpine data-table">
+      </ag-grid-angular>
+    </mat-tab>
   </mat-tab-group>
-
-
 </div>
 
