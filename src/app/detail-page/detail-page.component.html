@@ -5,30 +5,33 @@
       <mat-option *ngFor="let crypto of cryptos" [value]="crypto">{{crypto.name}}</mat-option>
     </mat-select>
   </mat-form-field>
-
-  <mat-tab-group>
+  <mat-tab-group mat-align-tabs="center">
     <mat-tab label="Summary">
-      <h2>{{selected?.name}}</h2>
-      <p><b>Current Price: </b>{{currentRecord?.price}}</p>
-      <p>
-        <b>Price Change: </b>
-        <span [class]="{'up-price': currentRecord?.change>0, 'down-price': currentRecord?.change<0}">
-          {{currentRecord?.change}}
+      <div class="summary-container">
+        <h2>{{selected?.name}}</h2>
+        <p><b>Current Price: </b>{{currentRecord?.price | currency}}</p>
+        <p>
+          <b>Price Change: </b>
+          <span [class]="{'up-price': currentRecord?.priceChange>0, 'down-price': currentRecord?.priceChange<0}">
+          {{currentRecord?.priceChange | currency}}
         </span>
-      </p>
-      <p>
-        <b>Percentage Change: </b>
-        <span [class]="{'up-price': currentRecord?.change>0, 'down-price': currentRecord?.change<0}">
-          {{currentRecord?.perChange}}
+        </p>
+        <p>
+          <b>Percentage Change: </b>
+          <span [class]="{'up-price': currentRecord?.priceChange>0, 'down-price': currentRecord?.priceChange<0}">
+          {{currentRecord?.perChange}}%
         </span>
-      </p>
+        </p>
+      </div>
     </mat-tab>
     <mat-tab label="Records">
-      <ag-grid-angular
-        [rowData]="rowData"
-        [columnDefs]="columnDefs"
-        class="ag-theme-alpine data-table">
-      </ag-grid-angular>
+      <div class="records-container">
+        <ag-grid-angular
+          [rowData]="rowData"
+          [columnDefs]="columnDefs"
+          class="ag-theme-alpine data-table">
+        </ag-grid-angular>
+      </div>
     </mat-tab>
     <mat-tab label="Prediction">
       <ag-grid-angular

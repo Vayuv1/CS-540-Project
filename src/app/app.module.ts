@@ -17,7 +17,10 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
 import {MatIconModule} from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatDividerModule} from '@angular/material/divider';
 import {DatePipe} from "@angular/common";
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -36,9 +39,12 @@ import {DatePipe} from "@angular/common";
     MatButtonModule,
     MatCheckboxModule,
     MatIconModule,
+    MatToolbarModule,
+    MatDividerModule,
     AppRoutingModule,
     AgGridModule,
-    MatSelectModule
+    MatSelectModule,
+    HttpClientModule
   ],
   providers: [
     DatePipe

@@ -7,6 +7,19 @@
 }
 
 .data-table {
-  width: 100%;
+  width: 70%;
   height: 400px;
+}
+
+.summary-container {
+  display: grid;
+  justify-content: left;
+  margin-left: 40px;
+}
+
+.records-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
 }
