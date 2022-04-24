@@ -9,6 +9,7 @@ import {RegisterUserComponent} from './register-user/register-user.component';
 import {DetailPageComponent} from './detail-page/detail-page.component';
 import {AppRoutingModule} from './app-routing.module';
 import {AgGridModule} from 'ag-grid-angular';
+import {AgChartsAngularModule} from 'ag-charts-angular';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTabsModule} from '@angular/material/tabs';
@@ -43,6 +44,7 @@ import {HttpClientModule} from '@angular/common/http';
     MatDividerModule,
     AppRoutingModule,
     AgGridModule,
+    AgChartsAngularModule,
     MatSelectModule,
     HttpClientModule
   ],
