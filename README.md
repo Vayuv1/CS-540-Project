@@ -48,6 +48,8 @@ Step 4: Setup client-side application:
 
 Step 5: Go to your browser and type in localhost:4200
 
+# Load the data (Yahoo Finance Data Retreival)
+Functions from pandas_datareader.data and pandas_datareader.wb was used to extrac data from Internet sources into a pandas DataFrame. After the Data for the three desired cryptocurrencies were collected, the main attributes were selected. For this project, “Close” price was the only attribute of interest, because this corresponds to the final price at the end of each day
 
 # Linear Regression Model
 
@@ -56,8 +58,6 @@ The folder "Crypto Forecasting" contains 4 files:
 "BTC.csv", "ETH.csv" and "LTC.csv" are the dataset of Bitcoin, Ethereum and Litcoin from the past year obtained from Yahoo Finance [https://finance.yahoo.com/cryptocurrencies/]
 Read all the comments in the code for a better understanding 
 
-### Load the data
-The data sets were load into the model and the a new independent data set was created in order to tested.
 
 ### Training the data
 
@@ -67,8 +67,9 @@ The model predicts the price for next 14 days.
 ### Score
 The R² error obtained is around 0.62 which means the model might be a little weak.
 
-## Future work
-Develope a different Machine Learning Model such as SVM, Ridge Regression or any Deep Learning model. 
-Compare the accuracy of each model
+# Neural Network Model
+
+This model took into consideration all the historical data for each cryptocurrency collected from January 1st, 2015, and then it was split into an interval of 60 days for testing and training with the main goal of predicting the 61st day. In other words, the model’s output is the next day closing price in USD.
+The structure and intended behavior of artificial neural networks is inspired by the functionality of the human brain. In analogy to the structure of a brain, which consists of billions of highly interconnected neurons, artificial neural networks consist of various, highly connected nodes. Every node receives a certain amount of input from other nodes and, dependent on the received input, each note generates output, which is then passed to subsequent nodes. Hence, information is passed through the network of nodes and transformed by every node on its path.
 
 
