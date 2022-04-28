@@ -2,36 +2,52 @@
 
 The project contains two sql files, namely, CreateDB.sql which creates the database and all the tables for the project and LoadDB.sql that loads the database with few dummy datas.
 
-# Web Application Setup (Angular)
+# Web Application Setup
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.3.
 
-Make sure to install angular CLI before running the project. The steps for installing Angular CLI can be found in the website below:
-https://angular.io/guide/setup-local
+Prerequisites to install:
 
-### Development server
+	node.js:
+		Information on installing Node.js, see nodejs.org. If you are unsure what version of Node.js runs on your system,
+		run following in a terminal window:
+			~ node -v
+	
+	npm package manager:
+		The npm client command line interface is installed with Node.js by default.
+		To check that you have the npm client installed, run following in a terminal window:
+			~ npm -v
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+	angular cli:
+		To install the Angular CLI, open a terminal window and run the following command:
+			~ npm install -g @angular/cli
 
-### Code scaffolding
+	MySQL:
+		Follow the link to download and install MySQL for your OS:
+			https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Step 1: Clone the projet from github.
+	> git clone https://github.com/Vayuv1/CS-540-Project.git
 
-### Build
+Step 2: Setup and load the database:
+	> Start a localhost server in MySQL
+	> Run CreateDB.sql to create the cs540_project database
+	> Run LoadDB.sql to load the database with some data
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Step 3: Setup server-side application:
+	> To install all the dependencies, starting at the root folder, enter the following commands in the terminal:
+		~ cd cs540-project-api
+		~ npm install
+	> To compile and run the application, enter the following command in the terminal:
+		~ node server.js (This runs on port 3000)
 
-### Running unit tests
+Step 4: Setup client-side application:
+	> To install all the dependencies, starting at the root folder, enter the following commands in the terminal:
+		~ npm install
+	> To compile and run the application, enter the following command in the terminal:
+		~ ng serve (This runs on port 4200 by default)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Step 5: Go to your browser and type in localhost:4200
 
-### Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-### Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 # Linear Regression Model
 
